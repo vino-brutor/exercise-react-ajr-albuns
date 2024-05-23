@@ -1,0 +1,100 @@
+$background: beige;
+$bg-light: #fcd60323;
+$bg-lighter: #f5f5f5;
+$bg-hover: #dee2e6;
+$text-dark: #343a40;
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background;
+}
+
+
+.carousel-item-active {
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    background-color: transparent;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none; /* Remove a seta padrão do Bootstrap */
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+    content: '‹'; /* Seta esquerda */
+    font-size: 50px;
+}
+
+.carousel-control-next-icon::before {
+    content: '›'; /* Seta direita */
+    font-size: 50px;
+}
+
+.img-fluid {
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir toda a área, cortando se necessário */
+}
+
+
+.custom-list-item {
+  background-color: $bg-light; // Cor de fundo personalizada
+  color: $text-dark; // Cor do texto
+
+  &:nth-child(odd) {
+    background-color: $bg-lighter; // Cor de fundo alternada para itens ímpares
+  }
+
+  &:hover {
+    background-color: $bg-hover; // Cor de fundo ao passar o mouse
+  }
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    transition: all 0.5s ease; /* Suaviza a transição */
+    opacity: 0;
+}
+
+.carousel-item.active {
+    position: relative;
+    left: 0;
+    opacity: 1;
+}
+
+
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%; /* Faz o item preencher a altura do .carousel-inner */
+    transition: all 0.5s ease;
+    opacity: 0;
+    display: flex; /* Adiciona flex para alinhar o conteúdo interno verticalmente */
+    align-items: center; /* Alinha o conteúdo interno ao centro verticalmente */
+}
+
+.carousel-item.active {
+    position: relative;
+    left: 0;
+    opacity: 1;
+}
