@@ -39,10 +39,6 @@ html, body {
     font-size: 50px;
 }
 
-.img-fluid {
-    height: 100%;
-    object-fit: cover; /* Ajusta a imagem para cobrir toda a área, cortando se necessário */
-}
 
 
 .custom-list-item {
@@ -97,4 +93,21 @@ html, body {
     position: relative;
     left: 0;
     opacity: 1;
+}
+
+@media (max-width: 760px) {
+    .img-fluid {
+        height: auto; /* Pode mudar para auto para manter a proporção */
+        object-fit: contain; /* Faz com que toda a imagem fique visível, ajustando-se ao contêiner */
+    }
+    .carousel-item {
+        min-height: 300px; /* Ajusta a altura mínima conforme necessário */
+    }
+}
+
+.img-fluid {
+    width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+    height: 100%; /* Define uma altura fixa se necessário, ou use auto para manter a proporção */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço disponível sem distorções */
+    object-position: center; /* Centraliza a imagem dentro do contêiner */
 }
